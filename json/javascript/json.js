@@ -16,7 +16,7 @@ async function getData() {
 
 //to updatetable when need like sorting and filtering
 function updateTable() {
-    let searchText = document.getElementById('search').value.toLowerCase();
+    let searchText = document.getElementById('search').value.toLowerCase().trim();
     let filteredData = data;
     //according to the given string all the similar data will come
     if (searchText) {
@@ -58,7 +58,7 @@ function updateTable() {
     showPageButtons(filteredData.length);
 }
 
-//pagination button creating and inserting
+//dynamic pagination button creating and inserting
 function showPageButtons(totalItems) {
     let totalPages = Math.ceil(totalItems / itemsPerPage);
     let pageControls = document.getElementById('pgnation');
